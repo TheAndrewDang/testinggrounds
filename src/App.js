@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { Homepage, Intro } from './components';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [isIntroFinished, setIsIntroFinished] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsIntroFinished(true);
+        }, 11500); // 10.5 seconds
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    return (
+        <div>
+            {isIntroFinished ? (
+                <div className='homepage'>
+                    <div className='navigation'>
+                        <Homepage />
+                    </div>
+                </div>
+            ) : (
+                <Intro />
+            )}
+        </div>
+    );
 }
 
 export default App;
