@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Homepage, Intro } from './components';
+import { Homepage, Intro, Secondpage } from './components';
 
 const App = () => {
     const [isIntroFinished, setIsIntroFinished] = useState(false);
@@ -17,6 +17,8 @@ const App = () => {
             {isIntroFinished ? (
                 <div className='homepage'>
                         <Homepage />
+                        <Secondpage />
+
                 </div>
             ) : (
                 <Intro />
