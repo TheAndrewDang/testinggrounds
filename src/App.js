@@ -16,9 +16,7 @@ const App = () => {
         <div>
             {isIntroFinished ? (
                 <div className='homepage'>
-                    <div className='navigation'>
                         <Homepage />
-                    </div>
                 </div>
             ) : (
                 <Intro />
