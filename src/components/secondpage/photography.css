@@ -1,19 +1,34 @@
-.carousel-container {
+.slider {
   position: relative;
-  width: 500px;  /* Width of the image display area */
-  height: 300px; /* Height of the image display area */
-  overflow: hidden; /* Ensures parts of the image outside this container are hidden */
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
-.carousel-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the area, cropping if needed */
-  display: block;
+.image {
+  width: 1500px;
+  height: 2000px;
+  border-radius: 10px;
 }
 
-.titleText {
-    text-align: center;
-    font-size: 45px;
-    padding: 20px;
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  color: black;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: black;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
 }

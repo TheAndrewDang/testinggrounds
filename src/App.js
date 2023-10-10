@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Homepage, Intro, Secondpage } from './components';
+import { Homepage, Intro, Secondpage, Aboutme } from './components';
+import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax';
+import { photoData } from './components/secondpage/photoData';
 
 const App = () => {
     const [isIntroFinished, setIsIntroFinished] = useState(false);
@@ -13,17 +15,23 @@ const App = () => {
     }, []);
 
     return (
-        <div>
-            {isIntroFinished ? (
-                <div className='homepage'>
+        <ParallaxProvider>
+            <div>
+                {isIntroFinished ? (
+                    <div className='homepage'>
+                        <ParallaxBanner
+                          layers={[{ image: '/static/banner.jpg', speed: -15 }]}
+                          className="aspect-[2/1]"
+                        />
                         <Homepage />
-                        <Secondpage />
-
-                </div>
-            ) : (
-                <Intro />
-            )}
-        </div>
+                        <Aboutme />
+                        <Secondpage slides={photoData}/>
+                    </div>
+                ) : (
+                    <Intro />
+                )}
+            </div>
+        </ParallaxProvider>
     );
 }
 

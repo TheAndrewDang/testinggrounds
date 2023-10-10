@@ -1,29 +1,43 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import {photoData} from './photoData';
+import {FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa'
 
 import './photography.css'
 
-const Photography= () => {
+const Photography = ({ slides }) => {
 
+  const [current, setCurrent] = useState(0)
 
-    const images = ['/image1.jpg', '/image2.jpg', '/image3.jpg', '/image4.jpg' ];
-const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const length = slides.length
 
-useEffect(() => {
-    const timer = setInterval(() => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    } , 3000);
+  if(!Array.isArray(slides) || slides.length <= 0){
+    return null;
+  }
 
-    return () => clearInterval(timer);
-}, []);
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1)
+  }
+ 
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1)
+  }
 
   return (
     <div>
-        <div>
-          <div className='titleText'>Here's Some of The Photos I've Taken Over The Years</div>
-        </div>
-        <div className='carousel-container'>
-        <img src={images[currentImageIndex]} alt="Carousel" className="carousel-image"/>
-        </div>
+      <section className='slider'>
+        <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide}/>
+        <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide}/>
+
+
+
+          {photoData.map((slide, index) => {
+            return (
+              <div className={index === current ? 'slide active' : 'slide'} key = {index}>
+                {index === current && (<img src={slide.image} className='image' />)}
+              </div>
+            )
+          })}
+      </section>
     </div>
   )
 }
