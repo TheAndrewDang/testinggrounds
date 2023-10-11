@@ -1,0 +1,53 @@
+@font-face {
+    font-family: JosefinSans;
+    src: url(/public/JosefinSans.ttf);
+  }
+  
+  div {
+    font-family: JosefinSans;
+  }
+
+.container {
+    height: 1000px;
+    width: 100%;
+    background-color: antiquewhite;
+    display: flex;
+}
+
+.portrait {
+    margin-left: 32px;
+    width: 40%;
+}
+
+.statement {
+    width: 45%;
+    margin-left: 100px;
+    text-align: center;
+}
+
+.portraitImage {
+    width: 100%;
+    height: auto;
+    border-radius: 60px;
+}
+
+.header {
+    font-size: 60px;
+}
+
+.information {
+    font-size: 30px;
+    padding-top: 50px;
+}
+
+.born {
+    padding-top: 50px;
+}
+
+.school {
+    padding-top: 50px;
+}
+
+.major {
+    padding-top: 50px;
+}

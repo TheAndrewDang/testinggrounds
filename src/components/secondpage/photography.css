@@ -3,12 +3,11 @@
   display: flex;
   justify-content: center;
   align-items: center; 
+  width: 60%;
 }
-
 .image {
-  width: 1500px;
-  height: 2000px;
-  border-radius: 10px;
+  width: 500px;
+  border-radius: 80px;
 }
 
 .right-arrow {
@@ -32,3 +31,4 @@
   cursor: pointer;
   user-select: none;
 }
+

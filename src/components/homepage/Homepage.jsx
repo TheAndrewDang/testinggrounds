@@ -10,6 +10,7 @@ const Homepage = () => {
       <Parallax translateY={[-20, 20]} translateX={[0, 0]}>
       <div className='fade-in'>
         <div className='topImage'>
+
           <Parallax translateY={[0, 140]} translateX={[0, 0]}>
           <div className='topText'>
             <div className='contentContainer'>
@@ -19,6 +20,7 @@ const Homepage = () => {
               </div>
               </div>
             </div>
+            <Parallax translateY={[0,10]} translateX={[0,0]}>
             <div className='fade-in2'>
             <div className='bounce-top'>
             <div className='arrowDown'>
@@ -26,8 +28,10 @@ const Homepage = () => {
             </div>
             </div>
             </div>
+            </Parallax>
           </div>
           </Parallax>
+
           </div>
       </div>
       </Parallax>
