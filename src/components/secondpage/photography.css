@@ -1,9 +1,20 @@
+.photoHeader{
+  display: flex;
+  font-size: 50px;
+}
+
+.statementParallax {
+  width: 100%;
+  text-align: center;
+}
+
 .slider {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center; 
-  width: 60%;
+  width: 50vh;
+  justify-content: center;
 }
 .image {
   width: 500px;

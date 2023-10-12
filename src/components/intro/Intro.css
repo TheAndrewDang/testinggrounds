@@ -126,8 +126,8 @@
   }
   
   .blur-out-expand {
-	-webkit-animation: blur-out-expand 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 10s both;
-	        animation: blur-out-expand 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 10s both;
+	-webkit-animation: blur-out-expand 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 8s both;
+	        animation: blur-out-expand 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 8s both;
 }
 
  @-webkit-keyframes blur-out-expand {
