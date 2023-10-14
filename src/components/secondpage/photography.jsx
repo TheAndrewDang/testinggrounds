@@ -24,17 +24,31 @@ const Photography = ({ slides }) => {
     setCurrent(current === 0 ? length - 1 : current - 1)
   }
 
+// Add an event listener to trigger the fade-in effect when the element is in view
+window.addEventListener('scroll', function() {
+  const fadeItems = document.querySelectorAll('.fade-item');
+
+  fadeItems.forEach(function(item) {
+      const itemTop = item.getBoundingClientRect().top;
+      const itemBottom = item.getBoundingClientRect().bottom;
+
+      if (itemTop < window.innerHeight && itemBottom >= 0) {
+          item.classList.add('fade-in');
+      } else {
+          item.classList.remove('fade-in');
+      }
+  });
+});
 
 
   return (
     <div>
       <ParallaxProvider>
       <div className='photoHeader'>
-      <Parallax className='statementParallax' translateY={[0, 700]} translateX={[0, 0]}>
+      <Parallax className='statementParallax' translateY={[500, -90]} translateX={[0, 0]}>
         Photos I Have Taken Over The Years
       </Parallax>
       </div>
-
 
       <section className='slider'>
         <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide}/>
